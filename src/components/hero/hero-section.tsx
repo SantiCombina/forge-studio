@@ -1,6 +1,6 @@
 export function HeroSection() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="flex min-h-screen w-full flex-col items-center justify-between py-32">
       <h1 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
         Welcome to <span className="text-blue-600">Next.js 16</span>
       </h1>
