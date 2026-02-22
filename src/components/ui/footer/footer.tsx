@@ -1,9 +1,11 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
+import { fadeUp, stagger } from '@/lib/animations';
 import { scrollToSection } from '@/lib/scroll';
 
 export function Footer() {
@@ -17,8 +19,17 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border py-12">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <motion.footer
+      className="border-t border-border py-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-40px' }}
+      variants={stagger}
+    >
+      <motion.div
+        variants={fadeUp}
+        className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
         <div className="flex items-center gap-8">
           <span className="font-serif text-lg font-semibold text-foreground">
             Forge<span className="text-primary">.</span>
@@ -45,13 +56,13 @@ export function Footer() {
             <Linkedin size={18} />
           </a>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="container mx-auto px-6 mt-8">
+      <motion.div variants={fadeUp} className="container mx-auto px-6 mt-8">
         <p className="text-xs font-sans text-muted-foreground text-center md:text-left">
           © {new Date().getFullYear()} Forge Studio. {t.footer.copyright}
         </p>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 }

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useLanguage } from "@/contexts/language-context";
-import { cn } from "@/lib/utils";
-import type { Language } from "@/lib/i18n";
+import { useLanguage } from '@/contexts/language-context';
+import type { Language } from '@/lib/i18n';
+import { cn } from '@/lib/utils';
 
 const LANGUAGES: { code: Language; label: string; ariaLabel: string }[] = [
-  { code: "en", label: "EN", ariaLabel: "Switch to English" },
-  { code: "es", label: "ES", ariaLabel: "Cambiar a Español" },
+  { code: 'en', label: 'EN', ariaLabel: 'Switch to English' },
+  { code: 'es', label: 'ES', ariaLabel: 'Cambiar a Español' },
 ];
 
 export function LanguageSwitcher() {
@@ -21,10 +21,8 @@ export function LanguageSwitcher() {
             aria-pressed={language === lang.code}
             aria-label={lang.ariaLabel}
             className={cn(
-              "bg-transparent border-none p-0 font-sans text-sm tracking-widest cursor-pointer transition-colors duration-200",
-              language === lang.code
-                ? "text-primary font-medium"
-                : "text-muted-foreground hover:text-foreground",
+              'bg-transparent border-none p-0 font-sans text-sm tracking-widest cursor-pointer transition-colors duration-200',
+              language === lang.code ? 'text-primary font-medium' : 'text-muted-foreground hover:text-foreground',
             )}
           >
             {lang.label}

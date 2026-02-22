@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
-import { type Language, type Translations, translations } from "@/lib/i18n";
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+
+import { type Language, type Translations, translations } from '@/lib/i18n';
 
 interface LanguageContextValue {
   language: Language;
@@ -11,17 +12,17 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-const STORAGE_KEY = "forge-language";
+const STORAGE_KEY = 'forge-language';
 
 function detectInitialLanguage(): Language {
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "en" || stored === "es") return stored;
+  if (stored === 'en' || stored === 'es') return stored;
   const browser = navigator.language.toLowerCase();
-  return browser.startsWith("es") ? "es" : "en";
+  return browser.startsWith('es') ? 'es' : 'en';
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
     const detected = detectInitialLanguage();
@@ -44,6 +45,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage(): LanguageContextValue {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
+  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider');
   return ctx;
 }

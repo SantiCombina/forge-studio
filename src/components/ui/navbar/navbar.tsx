@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -7,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { useLanguage } from '@/contexts/language-context';
+import { ease } from '@/lib/animations';
 import { scrollToSection } from '@/lib/scroll';
 
 export function Navbar() {
@@ -33,7 +35,10 @@ export function Navbar() {
   };
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : 'bg-transparent'
       }`}
@@ -88,6 +93,6 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }
