@@ -5,18 +5,21 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/ui/language-switcher';
+import { useLanguage } from '@/contexts/language-context';
 import { scrollToSection } from '@/lib/scroll';
 
-const navLinks = [
-  { label: 'Services', id: 'services' },
-  { label: 'Work', id: 'work' },
-  { label: 'About', id: 'about' },
-  { label: 'Contact', id: 'contact' },
-];
-
 export function Navbar() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t.navbar.services, id: 'services' },
+    { label: t.navbar.work, id: 'work' },
+    { label: t.navbar.about, id: 'about' },
+    { label: t.navbar.contact, id: 'contact' },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -55,14 +58,7 @@ export function Navbar() {
               {link.label}
             </Button>
           ))}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleNavClick('contact')}
-            className="border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 font-sans"
-          >
-            Let's talk
-          </Button>
+          <LanguageSwitcher />
         </div>
 
         <Button
@@ -87,14 +83,9 @@ export function Navbar() {
               {link.label}
             </Button>
           ))}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleNavClick('contact')}
-            className="mt-3 w-full border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground font-sans"
-          >
-            Let's talk
-          </Button>
+          <div className="mt-4 pl-1">
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </nav>

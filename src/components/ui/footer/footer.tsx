@@ -3,16 +3,19 @@
 import { Github, Linkedin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/language-context';
 import { scrollToSection } from '@/lib/scroll';
 
-const navLinks = [
-  { label: 'Services', id: 'services' },
-  { label: 'Work', id: 'work' },
-  { label: 'About', id: 'about' },
-  { label: 'Contact', id: 'contact' },
-];
-
 export function Footer() {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.footer.services, id: 'services' },
+    { label: t.footer.work, id: 'work' },
+    { label: t.footer.about, id: 'about' },
+    { label: t.footer.contact, id: 'contact' },
+  ];
+
   return (
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -46,7 +49,7 @@ export function Footer() {
 
       <div className="container mx-auto px-6 mt-8">
         <p className="text-xs font-sans text-muted-foreground text-center md:text-left">
-          © {new Date().getFullYear()} Forge Studio. All rights reserved.
+          © {new Date().getFullYear()} Forge Studio. {t.footer.copyright}
         </p>
       </div>
     </footer>

@@ -2,9 +2,13 @@
 
 import { motion } from 'framer-motion';
 
+import { useLanguage } from '@/contexts/language-context';
+
 const techs = ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'TailwindCSS', 'Python', 'AWS'];
 
 export function TechStackSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 border-t border-border">
       <div className="container mx-auto px-6">
@@ -15,7 +19,7 @@ export function TechStackSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Technologies we work with</h2>
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">{t.techStack.heading}</h2>
         </motion.div>
 
         <motion.div

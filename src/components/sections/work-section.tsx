@@ -4,29 +4,23 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/contexts/language-context';
 
-const projects = [
-  {
-    title: 'Meridian Finance',
-    description:
-      'A comprehensive financial dashboard for a fintech startup. Real-time data visualization, portfolio tracking, and automated reporting.',
-    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-  },
-  {
-    title: 'Aura Health',
-    description:
-      'Patient management platform for a digital health company. Appointment scheduling, telehealth integration, and secure records.',
-    tags: ['Next.js', 'TailwindCSS', 'Supabase', 'Stripe'],
-  },
-  {
-    title: 'Nomad Logistics',
-    description:
-      'Supply chain management tool with real-time shipment tracking, route optimization, and warehouse inventory management.',
-    tags: ['React', 'Python', 'AWS', 'GraphQL'],
-  },
+const projectTags = [
+  ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+  ['Next.js', 'TailwindCSS', 'Supabase', 'Stripe'],
+  ['React', 'Python', 'AWS', 'GraphQL'],
 ];
 
 export function WorkSection() {
+  const { t } = useLanguage();
+
+  const projects = [
+    { ...t.work.projects.meridian, tags: projectTags[0] },
+    { ...t.work.projects.aura, tags: projectTags[1] },
+    { ...t.work.projects.nomad, tags: projectTags[2] },
+  ];
+
   return (
     <section id="work" className="py-24 md:py-32 border-t border-border">
       <div className="container mx-auto px-6">
@@ -37,8 +31,8 @@ export function WorkSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground mb-4">Selected projects</p>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">Our Work</h2>
+          <p className="text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground mb-4">{t.work.eyebrow}</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">{t.work.heading}</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,7 +67,7 @@ export function WorkSection() {
                   href="#"
                   className="inline-flex items-center gap-1.5 text-sm font-sans text-primary hover:text-warm-beige-light transition-colors group/link"
                 >
-                  View project
+                  {t.work.viewProject}
                   <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
