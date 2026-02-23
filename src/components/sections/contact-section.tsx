@@ -91,9 +91,8 @@ export function ContactSection() {
             <Textarea
               {...form.register('message')}
               placeholder={t.contact.messagePlaceholder}
-              rows={5}
               disabled={isPending}
-              className="bg-secondary border-border text-foreground placeholder:text-muted-foreground font-sans resize-none"
+              className="bg-secondary border-border text-foreground placeholder:text-muted-foreground font-sans resize-none min-h-28"
             />
             {form.formState.errors.message && (
               <p className="text-xs text-destructive font-sans">{form.formState.errors.message.message}</p>

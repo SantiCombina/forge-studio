@@ -10,10 +10,10 @@ export function ServicesSection() {
   const { t } = useLanguage();
 
   const services = [
-    { icon: Globe, ...t.services.items.webApps },
-    { icon: Code2, ...t.services.items.customSoftware },
-    { icon: Plug, ...t.services.items.apiIntegrations },
-    { icon: Palette, ...t.services.items.uxUiDesign },
+    { key: 'webApps', icon: Globe, ...t.services.items.webApps },
+    { key: 'customSoftware', icon: Code2, ...t.services.items.customSoftware },
+    { key: 'apiIntegrations', icon: Plug, ...t.services.items.apiIntegrations },
+    { key: 'uxUiDesign', icon: Palette, ...t.services.items.uxUiDesign },
   ];
 
   return (
@@ -40,7 +40,7 @@ export function ServicesSection() {
           variants={stagger}
         >
           {services.map((service) => (
-            <motion.div key={service.title} variants={fadeUp} className="glass-card p-8 group cursor-default">
+            <motion.div key={service.key} variants={fadeUp} className="glass-card p-8 group cursor-default">
               <service.icon
                 size={28}
                 className="text-primary mb-6 group-hover:text-warm-beige-light transition-colors"

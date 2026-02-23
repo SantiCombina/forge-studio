@@ -17,9 +17,9 @@ const playfairDisplay = Playfair_Display({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://forgestudio.dev';
 
-const title = 'Forge Studio — Custom Software Development';
+const title = 'Forge - Custom Software Development';
 const description =
-  "Two senior developers who partner with startups and scaleups to design, build, and ship custom software — web apps, APIs, dashboards, and more. Let's build something great.";
+  "Developers who partner with startups and scaleups to design, build, and ship custom software — web apps, APIs, dashboards, and more. Let's build something great.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
