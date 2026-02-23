@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
@@ -49,10 +49,22 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-5">
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
-            <Github size={18} />
+          <a
+            href="https://www.instagram.com/forgestudio.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram size={18} />
           </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/forge-studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="LinkedIn"
+          >
             <Linkedin size={18} />
           </a>
         </div>
