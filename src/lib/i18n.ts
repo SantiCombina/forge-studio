@@ -39,8 +39,10 @@ export interface Translations {
     eyebrow: string;
     heading: string;
     team: {
-      alex: { role: string; bio: string };
-      jordan: { role: string; bio: string };
+      santiago: { role: string; bio: string };
+      bruno: { role: string; bio: string };
+      gino: { role: string; bio: string };
+      martin: { role: string; bio: string };
     };
     closingStatement: string;
   };
@@ -137,13 +139,21 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Who we are',
       heading: 'The Team',
       team: {
-        alex: {
+        santiago: {
           role: 'Full-Stack Developer & Co-Founder',
-          bio: '10+ years building scalable web platforms. Obsessed with clean architecture and developer experience.',
+          bio: 'Passionate about building scalable systems. Loves turning complex problems into elegant, maintainable solutions.',
         },
-        jordan: {
+        bruno: {
           role: 'Full-Stack Developer & Co-Founder',
-          bio: 'Former lead engineer at a Series B startup. Specializes in APIs, databases, and system design.',
+          bio: 'Deep expertise in cloud infrastructure, CI/CD pipelines, and backend performance optimization.',
+        },
+        gino: {
+          role: 'Frontend Developer',
+          bio: 'UI craftsman with a keen eye for design systems and interactive experiences. React and animation enthusiast.',
+        },
+        martin: {
+          role: 'Backend Developer',
+          bio: 'Databases, APIs, and system architecture are his playground. Focused on reliability and security.',
         },
       },
       closingStatement:
@@ -242,13 +252,21 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Quiénes somos',
       heading: 'El Equipo',
       team: {
-        alex: {
+        santiago: {
           role: 'Desarrollador Full-Stack & Co-Fundador',
-          bio: 'Más de 10 años construyendo plataformas web escalables. Obsesionado con la arquitectura limpia y la experiencia del desarrollador.',
+          bio: 'Apasionado por construir sistemas escalables. Le encanta convertir problemas complejos en soluciones elegantes y mantenibles.',
         },
-        jordan: {
+        bruno: {
           role: 'Desarrollador Full-Stack & Co-Fundador',
-          bio: 'Ex ingeniero líder en una startup Serie B. Especialista en APIs, bases de datos y diseño de sistemas.',
+          bio: 'Profunda experiencia en infraestructura cloud, pipelines CI/CD y optimización de rendimiento backend.',
+        },
+        gino: {
+          role: 'Desarrollador Frontend',
+          bio: 'Artesano de UI con ojo agudo para sistemas de diseño y experiencias interactivas. Entusiasta de React y las animaciones.',
+        },
+        martin: {
+          role: 'Desarrollador Backend',
+          bio: 'Las bases de datos, APIs y la arquitectura de sistemas son su territorio. Enfocado en confiabilidad y seguridad.',
         },
       },
       closingStatement:

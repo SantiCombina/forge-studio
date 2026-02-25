@@ -5,14 +5,16 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/language-context';
 import { ease, fadeUp, stagger } from '@/lib/animations';
 
-const teamNames = ['Alex Rivera', 'Jordan Chen'];
+const teamNames = ['Santiago Combina', 'Bruno Cé', 'Gino Novello', 'Martin Giaveno'];
 
 export function AboutSection() {
   const { t } = useLanguage();
 
   const team = [
-    { name: teamNames[0], ...t.about.team.alex },
-    { name: teamNames[1], ...t.about.team.jordan },
+    { name: teamNames[0], ...t.about.team.santiago },
+    { name: teamNames[1], ...t.about.team.bruno },
+    { name: teamNames[2], ...t.about.team.gino },
+    { name: teamNames[3], ...t.about.team.martin },
   ];
 
   return (
@@ -30,7 +32,7 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
