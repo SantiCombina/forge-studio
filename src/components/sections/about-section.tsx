@@ -19,7 +19,7 @@ export function AboutSection() {
     },
     {
       name: teamNames[1],
-      image: '/fotoBruno.png',
+      image: '/fotoBruno.webp',
       ...t.about.team.bruno,
     },
     {
@@ -35,7 +35,8 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 border-t border-border">
+    <section id="about" className="relative py-24 md:py-32">
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
@@ -67,10 +68,10 @@ export function AboutSection() {
                 />
               </div>{' '}
               <h3 className="text-lg font-inter font-bold text-foreground">{member.name}</h3>
-              <p className="text-sm font-sans text-primary mb-2 min-h-[40px] flex items-center justify-center">
+              <p className="text-sm font-sans text-primary mb-2 min-h-10 flex items-center justify-center">
                 {member.role}
               </p>
-              <p className="text-sm font-sans text-muted-foreground leading-relaxed min-h-[72px]">{member.bio}</p>
+              <p className="text-sm font-sans text-muted-foreground leading-relaxed min-h-18">{member.bio}</p>
             </motion.div>
           ))}
         </motion.div>

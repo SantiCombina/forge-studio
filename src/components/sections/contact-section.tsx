@@ -28,6 +28,7 @@ export function ContactSection() {
     if (form.formState.isSubmitted) {
       form.trigger();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
 
   const { execute, isPending } = useAction(sendContactEmail, {
@@ -41,7 +42,8 @@ export function ContactSection() {
   });
 
   return (
-    <section id="contact" className="py-24 md:py-32 border-t border-border">
+    <section id="contact" className="relative py-24 md:py-32">
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       <div className="container mx-auto px-6 max-w-2xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

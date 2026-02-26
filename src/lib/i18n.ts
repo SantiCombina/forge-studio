@@ -71,6 +71,7 @@ export interface Translations {
     about: string;
     contact: string;
     copyright: string;
+    tagline: string;
   };
 }
 
@@ -187,6 +188,7 @@ export const translations: Record<Language, Translations> = {
       about: 'About',
       contact: 'Contact',
       copyright: 'All rights reserved.',
+      tagline: 'Crafting digital excellence.',
     },
   },
   es: {
@@ -301,6 +303,7 @@ export const translations: Record<Language, Translations> = {
       about: 'Nosotros',
       contact: 'Contacto',
       copyright: 'Todos los derechos reservados.',
+      tagline: 'Artesanía digital de excelencia.',
     },
   },
 };

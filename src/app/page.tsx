@@ -6,6 +6,7 @@ import { TechStackSection } from '@/components/sections/tech-stack-section';
 import { WorkSection } from '@/components/sections/work-section';
 import { Footer } from '@/components/ui/footer/footer';
 import { Navbar } from '@/components/ui/navbar/navbar';
+import { FEATURES } from '@/lib/features';
 
 export default function Home() {
   return (
@@ -14,8 +15,8 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <WorkSection />
+      {FEATURES.techStackSection && <TechStackSection />}
       <AboutSection />
-      <TechStackSection />
       <ContactSection />
       <Footer />
     </main>

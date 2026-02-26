@@ -23,7 +23,8 @@ export function WorkSection() {
   ];
 
   return (
-    <section id="work" className="py-24 md:py-32 border-t border-border">
+    <section id="work" className="relative py-24 md:py-32">
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"

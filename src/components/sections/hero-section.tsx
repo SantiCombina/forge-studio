@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
+import Beams from '@/components/ui/beams';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
 import { ease } from '@/lib/animations';
@@ -13,9 +13,20 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-between">
-      <Image src="/hero-bg.jpg" alt="Hero background" fill priority className="object-cover object-center opacity-40" />
+      <div className="absolute inset-0">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={20}
+          lightColor="#bcac92"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={30}
+        />
+      </div>
 
-      <div className="absolute inset-0 bg-linear-to-b from-background/60 via-background/80 to-background" />
+      <div className="absolute inset-0 bg-background/30" />
 
       <div className="container relative z-10 mx-auto px-6 text-center max-w-4xl">
         <motion.p
@@ -69,6 +80,7 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-background to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
     </section>
   );
