@@ -50,7 +50,7 @@ export function WorkSection() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-foreground mb-2">{project.title}</h3>
+                <h3 className="text-lg font-inter font-bold text-foreground mb-2">{project.title}</h3>
                 <p className="text-sm font-sans text-muted-foreground leading-relaxed mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.map((tag) => (

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, Globe, Palette, Plug } from 'lucide-react';
+import { Layers, Workflow, LayoutDashboard, Boxes } from 'lucide-react';
 
 import { useLanguage } from '@/contexts/language-context';
 import { fadeUp, stagger } from '@/lib/animations';
@@ -10,10 +10,26 @@ export function ServicesSection() {
   const { t } = useLanguage();
 
   const services = [
-    { key: 'webApps', icon: Globe, ...t.services.items.webApps },
-    { key: 'customSoftware', icon: Code2, ...t.services.items.customSoftware },
-    { key: 'apiIntegrations', icon: Plug, ...t.services.items.apiIntegrations },
-    { key: 'uxUiDesign', icon: Palette, ...t.services.items.uxUiDesign },
+    {
+      key: 'customDevelopment',
+      icon: Layers,
+      ...t.services.items.customDevelopment,
+    },
+    {
+      key: 'automationIntegrations',
+      icon: Workflow,
+      ...t.services.items.automationIntegrations,
+    },
+    {
+      key: 'strategicWeb',
+      icon: LayoutDashboard,
+      ...t.services.items.strategicWeb,
+    },
+    {
+      key: 'standardSolutions',
+      icon: Boxes,
+      ...t.services.items.standardSolutions,
+    },
   ];
 
   return (
@@ -46,7 +62,7 @@ export function ServicesSection() {
                 className="text-primary mb-6 group-hover:text-warm-beige-light transition-colors"
                 strokeWidth={1.5}
               />
-              <h3 className="text-lg font-serif font-bold text-foreground mb-3">{service.title}</h3>
+              <h3 className="text-md font-inter font-bold text-foreground mb-3">{service.title}</h3>
               <p className="text-sm font-sans text-muted-foreground leading-relaxed">{service.description}</p>
             </motion.div>
           ))}

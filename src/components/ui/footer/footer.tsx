@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Mail } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
@@ -58,6 +58,7 @@ export function Footer() {
           >
             <Instagram size={18} />
           </a>
+
           <a
             href="https://www.linkedin.com/in/forge-studio/"
             target="_blank"
@@ -66,6 +67,21 @@ export function Footer() {
             aria-label="LinkedIn"
           >
             <Linkedin size={18} />
+          </a>
+
+          {/* <a ICONO PARA MAIL SI NO QUEREMOS DEJAR EL MAIL ESCRITO
+            href="mailto:forgestudiotech@gmail.com"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Email"
+          >
+            <Mail size={18} />
+          </a> */}
+
+          <a
+            href="mailto:forgestudiotech@gmail.com"
+            className="text-xs font-sans text-muted-foreground hover:text-foreground transition-colors"
+          >
+            forgestudiotech@gmail.com
           </a>
         </div>
       </motion.div>

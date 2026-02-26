@@ -19,10 +19,10 @@ export interface Translations {
     eyebrow: string;
     heading: string;
     items: {
-      webApps: { title: string; description: string };
-      customSoftware: { title: string; description: string };
-      apiIntegrations: { title: string; description: string };
-      uxUiDesign: { title: string; description: string };
+      customDevelopment: { title: string; description: string };
+      automationIntegrations: { title: string; description: string };
+      strategicWeb: { title: string; description: string };
+      standardSolutions: { title: string; description: string };
     };
   };
   work: {
@@ -94,22 +94,25 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'What we do',
       heading: 'Services',
       items: {
-        webApps: {
-          title: 'Web Applications',
+        customDevelopment: {
+          title: 'Custom Development',
           description:
-            'Modern, performant web apps built with cutting-edge frameworks. From dashboards to SaaS platforms.',
+            'Tailored digital solutions built around your business model. From internal systems to scalable SaaS platforms.',
         },
-        customSoftware: {
-          title: 'Custom Software',
-          description: 'Tailored solutions engineered from the ground up to solve your specific business challenges.',
+        automationIntegrations: {
+          title: 'Automation & Integrations',
+          description:
+            'Process automation and seamless system integrations that reduce manual work and improve operational efficiency.',
         },
-        apiIntegrations: {
-          title: 'API & Integrations',
-          description: 'Robust APIs and seamless third-party integrations that connect your systems and data.',
+        strategicWeb: {
+          title: 'Strategic Web Development',
+          description:
+            'High-performance websites and web platforms designed with business goals, conversion, and scalability in mind.',
         },
-        uxUiDesign: {
-          title: 'UX/UI Design & Dev',
-          description: 'User-centered design paired with pixel-perfect development for experiences that convert.',
+        standardSolutions: {
+          title: 'Standardized Digital Solutions',
+          description:
+            'Pre-built, structured digital systems ready to be implemented and adapted to your operational needs.',
         },
       },
     },
@@ -140,24 +143,24 @@ export const translations: Record<Language, Translations> = {
       heading: 'The Team',
       team: {
         santiago: {
-          role: 'Full-Stack Developer & Co-Founder',
-          bio: 'Passionate about building scalable systems. Loves turning complex problems into elegant, maintainable solutions.',
+          role: 'Co-Founder · Architecture & Development',
+          bio: 'Software Engineering student focused on scalable product design and solid system architecture.',
         },
         bruno: {
-          role: 'Full-Stack Developer & Co-Founder',
-          bio: 'Deep expertise in cloud infrastructure, CI/CD pipelines, and backend performance optimization.',
+          role: 'Co-Founder · Strategy & Development',
+          bio: 'University Programming Technician. Combines strategic vision with technical execution and product-driven thinking.',
         },
         gino: {
-          role: 'Frontend Developer',
-          bio: 'UI craftsman with a keen eye for design systems and interactive experiences. React and animation enthusiast.',
+          role: 'Fullstack Developer',
+          bio: 'Data Science student focused on performance, security, and project reliability.',
         },
         martin: {
-          role: 'Backend Developer',
-          bio: 'Databases, APIs, and system architecture are his playground. Focused on reliability and security.',
+          role: 'Frontend Developer',
+          bio: 'Software Engineering student focused on user experience and interface design.',
         },
       },
       closingStatement:
-        "We believe great software is built through craftsmanship and close partnership. We don't just ship code — we embed ourselves in your vision, working as an extension of your team to create products that last.",
+        'We believe high-quality software is born from the combination of strategic vision and technical excellence. We work as an extension of your team, building solid digital solutions designed to grow.',
     },
     techStack: {
       heading: 'Technologies we work with',
@@ -205,24 +208,25 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Lo que hacemos',
       heading: 'Servicios',
       items: {
-        webApps: {
-          title: 'Aplicaciones Web',
+        customDevelopment: {
+          title: 'Desarrollo a Medida',
           description:
-            'Apps web modernas y eficientes construidas con frameworks de vanguardia. Desde dashboards hasta plataformas SaaS.',
+            'Soluciones digitales diseñadas en función de tu modelo de negocio. Desde sistemas internos hasta plataformas SaaS escalables.',
         },
-        customSoftware: {
-          title: 'Software a Medida',
+        automationIntegrations: {
+          title: 'Automatización e Integraciones',
           description:
-            'Soluciones personalizadas diseñadas desde cero para resolver los desafíos específicos de tu negocio.',
+            'Automatización de procesos e integración de sistemas para reducir tareas manuales y optimizar la eficiencia operativa.',
         },
-        apiIntegrations: {
-          title: 'APIs e Integraciones',
-          description: 'APIs robustas e integraciones con terceros que conectan tus sistemas y datos sin fricciones.',
-        },
-        uxUiDesign: {
-          title: 'Diseño y Desarrollo UX/UI',
+        strategicWeb: {
+          title: 'Desarrollo Web Estratégico',
           description:
-            'Diseño centrado en el usuario combinado con desarrollo pixel-perfect para experiencias que convierten.',
+            'Sitios y plataformas web de alto rendimiento diseñados con foco en objetivos de negocio, conversión y escalabilidad.',
+        },
+        standardSolutions: {
+          title: 'Soluciones Digitales Estandarizadas',
+          description:
+            'Sistemas digitales estructurados y listos para implementar, adaptables a las necesidades operativas de tu empresa.',
         },
       },
     },
@@ -253,24 +257,24 @@ export const translations: Record<Language, Translations> = {
       heading: 'El Equipo',
       team: {
         santiago: {
-          role: 'Desarrollador Full-Stack & Co-Fundador',
-          bio: 'Apasionado por construir sistemas escalables. Le encanta convertir problemas complejos en soluciones elegantes y mantenibles.',
+          role: 'Co-Fundador · Arquitectura y Desarrollo',
+          bio: 'Estudiante de Ingeniería en Sistemas, enfocado en el diseño de productos escalables y arquitectura sólida.',
         },
         bruno: {
-          role: 'Desarrollador Full-Stack & Co-Fundador',
-          bio: 'Profunda experiencia en infraestructura cloud, pipelines CI/CD y optimización de rendimiento backend.',
+          role: 'Co-Fundador · Estrategia y Desarrollo',
+          bio: 'Técnico Universitario en Programación. Combina visión estratégica con ejecución técnica.',
         },
         gino: {
-          role: 'Desarrollador Frontend',
-          bio: 'Artesano de UI con ojo agudo para sistemas de diseño y experiencias interactivas. Entusiasta de React y las animaciones.',
+          role: 'Desarrollador Fullstack',
+          bio: 'Estudiante de Ciencia de Datos enfocado en rendimiento, seguridad y confiabilidad de los proyectos.',
         },
         martin: {
-          role: 'Desarrollador Backend',
-          bio: 'Las bases de datos, APIs y la arquitectura de sistemas son su territorio. Enfocado en confiabilidad y seguridad.',
+          role: 'Desarrollador Frontend',
+          bio: 'Estudiante de Ingeniería de Sistemas con enfoque en experiencia de usuario y diseño de interfaces.',
         },
       },
       closingStatement:
-        'Creemos que el gran software se construye a través del oficio y la colaboración cercana. No solo enviamos código — nos sumergimos en tu visión, trabajando como una extensión de tu equipo para crear productos que perduran.',
+        'Creemos que el software de calidad nace de la combinación entre visión estratégica y excelencia técnica. Trabajamos como una extensión de tu equipo, construyendo soluciones digitales sólidas y pensadas para crecer.',
     },
     techStack: {
       heading: 'Tecnologías con las que trabajamos',

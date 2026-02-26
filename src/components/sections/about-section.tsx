@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import { useLanguage } from '@/contexts/language-context';
 import { ease, fadeUp, stagger } from '@/lib/animations';
@@ -11,10 +12,26 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   const team = [
-    { name: teamNames[0], ...t.about.team.santiago },
-    { name: teamNames[1], ...t.about.team.bruno },
-    { name: teamNames[2], ...t.about.team.gino },
-    { name: teamNames[3], ...t.about.team.martin },
+    {
+      name: teamNames[0],
+      image: '/fotoSantiago.webp',
+      ...t.about.team.santiago,
+    },
+    {
+      name: teamNames[1],
+      image: '/fotoBruno.png',
+      ...t.about.team.bruno,
+    },
+    {
+      name: teamNames[2],
+      image: '/fotoGino.webp',
+      ...t.about.team.gino,
+    },
+    {
+      name: teamNames[3],
+      image: '/fotoMartin.webp',
+      ...t.about.team.martin,
+    },
   ];
 
   return (
@@ -40,10 +57,20 @@ export function AboutSection() {
         >
           {team.map((member) => (
             <motion.div key={member.name} variants={fadeUp} className="text-center">
-              <div className="w-24 h-24 rounded-full bg-secondary mx-auto mb-5 border border-border" />
-              <h3 className="text-lg font-serif font-bold text-foreground">{member.name}</h3>
-              <p className="text-sm font-sans text-primary mb-2">{member.role}</p>
-              <p className="text-sm font-sans text-muted-foreground leading-relaxed">{member.bio}</p>
+              <div className="relative w-32 h-32 mx-auto mb-5">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="rounded-full object-cover border border-border"
+                  sizes="96px"
+                />
+              </div>{' '}
+              <h3 className="text-lg font-inter font-bold text-foreground">{member.name}</h3>
+              <p className="text-sm font-sans text-primary mb-2 min-h-[40px] flex items-center justify-center">
+                {member.role}
+              </p>
+              <p className="text-sm font-sans text-muted-foreground leading-relaxed min-h-[72px]">{member.bio}</p>
             </motion.div>
           ))}
         </motion.div>
