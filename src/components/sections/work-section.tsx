@@ -1,26 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-
-import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
 import { fadeUp, stagger } from '@/lib/animations';
-
-const projectTags = [
-  ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-  ['Next.js', 'TailwindCSS', 'Supabase', 'Stripe'],
-  ['React', 'Python', 'AWS', 'GraphQL'],
-];
 
 export function WorkSection() {
   const { t } = useLanguage();
 
-  const projects = [
-    { ...t.work.projects.meridian, tags: projectTags[0] },
-    { ...t.work.projects.aura, tags: projectTags[1] },
-    { ...t.work.projects.nomad, tags: projectTags[2] },
-  ];
+  const projects = [t.work.projects.meridian, t.work.projects.aura, t.work.projects.nomad];
 
   return (
     <section id="work" className="relative py-24 md:py-32">
@@ -52,22 +39,7 @@ export function WorkSection() {
 
               <div className="p-6">
                 <h3 className="text-lg font-inter font-bold text-foreground mb-2">{project.title}</h3>
-                <p className="text-sm font-sans text-muted-foreground leading-relaxed mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="bg-secondary text-muted-foreground border-border font-sans text-xs"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-sm font-sans text-muted-foreground/50 cursor-default select-none">
-                  {t.work.viewProject}
-                  <ArrowRight size={14} />
-                </span>
+                <p className="text-sm font-sans text-muted-foreground leading-relaxed">{project.description}</p>
               </div>
             </motion.div>
           ))}

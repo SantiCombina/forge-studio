@@ -28,7 +28,6 @@ export interface Translations {
   work: {
     eyebrow: string;
     heading: string;
-    viewProject: string;
     projects: {
       meridian: { title: string; description: string };
       aura: { title: string; description: string };
@@ -45,9 +44,6 @@ export interface Translations {
       martin: { role: string; bio: string };
     };
     closingStatement: string;
-  };
-  techStack: {
-    heading: string;
   };
   contact: {
     heading: string;
@@ -120,7 +116,6 @@ export const translations: Record<Language, Translations> = {
     work: {
       eyebrow: 'Selected projects',
       heading: 'Our Work',
-      viewProject: 'View project',
       projects: {
         meridian: {
           title: 'Meridian Finance',
@@ -162,9 +157,6 @@ export const translations: Record<Language, Translations> = {
       },
       closingStatement:
         'We believe high-quality software is born from the combination of strategic vision and technical excellence. We work as an extension of your team, building solid digital solutions designed to grow.',
-    },
-    techStack: {
-      heading: 'Technologies we work with',
     },
     contact: {
       heading: 'Have a project in mind?',
@@ -235,7 +227,6 @@ export const translations: Record<Language, Translations> = {
     work: {
       eyebrow: 'Proyectos seleccionados',
       heading: 'Nuestro Trabajo',
-      viewProject: 'Ver proyecto',
       projects: {
         meridian: {
           title: 'Meridian Finance',
@@ -277,9 +268,6 @@ export const translations: Record<Language, Translations> = {
       },
       closingStatement:
         'Creemos que el software de calidad nace de la combinación entre visión estratégica y excelencia técnica. Trabajamos como una extensión de tu equipo, construyendo soluciones digitales sólidas y pensadas para crecer.',
-    },
-    techStack: {
-      heading: 'Tecnologías con las que trabajamos',
     },
     contact: {
       heading: '¿Tienes un proyecto en mente?',
