@@ -28,7 +28,6 @@ export function ContactSection() {
     if (form.formState.isSubmitted) {
       form.trigger();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
 
   const { execute, isPending } = useAction(sendContactEmail, {

@@ -1,13 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+
 import { useLanguage } from '@/contexts/language-context';
 import { fadeUp, stagger } from '@/lib/animations';
+
+const projectImages: Record<string, string> = {
+  gomezProducciones: '/works/gomezprod.png',
+  talkeezi: '/works/talkeezi.png',
+  beepsystem: '/works/beepsystem.png',
+  radiante: '/works/radiante.png',
+  sadonetech: '/works/sadonetech.png',
+  pedana: '/works/pedana.png',
+};
 
 export function WorkSection() {
   const { t } = useLanguage();
 
-  const projects = [t.work.projects.meridian, t.work.projects.aura, t.work.projects.nomad];
+  const projects = [
+    { key: 'gomezProducciones', ...t.work.projects.gomezProducciones },
+    { key: 'talkeezi', ...t.work.projects.talkeezi },
+    { key: 'beepsystem', ...t.work.projects.beepsystem },
+    { key: 'radiante', ...t.work.projects.radiante },
+    { key: 'sadonetech', ...t.work.projects.sadonetech },
+    { key: 'pedana', ...t.work.projects.pedana },
+  ];
 
   return (
     <section id="work" className="relative py-24 md:py-32">
@@ -32,14 +50,19 @@ export function WorkSection() {
           variants={stagger}
         >
           {projects.map((project) => (
-            <motion.div key={project.title} variants={fadeUp} className="glass-card overflow-hidden group">
-              <div className="aspect-video bg-secondary/60 relative overflow-hidden">
-                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent" />
+            <motion.div key={project.key} variants={fadeUp} className="glass-card overflow-hidden">
+              <div className="aspect-video relative overflow-hidden">
+                <Image
+                  src={projectImages[project.key]}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
 
               <div className="p-6">
-                <h3 className="text-lg font-inter font-bold text-foreground mb-2">{project.title}</h3>
-                <p className="text-sm font-sans text-muted-foreground leading-relaxed">{project.description}</p>
+                <h3 className="text-lg font-inter font-bold text-foreground">{project.title}</h3>
               </div>
             </motion.div>
           ))}

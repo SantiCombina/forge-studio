@@ -29,9 +29,12 @@ export interface Translations {
     eyebrow: string;
     heading: string;
     projects: {
-      meridian: { title: string; description: string };
-      aura: { title: string; description: string };
-      nomad: { title: string; description: string };
+      gomezProducciones: { title: string };
+      talkeezi: { title: string };
+      beepsystem: { title: string };
+      radiante: { title: string };
+      sadonetech: { title: string };
+      pedana: { title: string };
     };
   };
   about: {
@@ -117,21 +120,12 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Selected projects',
       heading: 'Our Work',
       projects: {
-        meridian: {
-          title: 'Meridian Finance',
-          description:
-            'A comprehensive financial dashboard for a fintech startup. Real-time data visualization, portfolio tracking, and automated reporting.',
-        },
-        aura: {
-          title: 'Aura Health',
-          description:
-            'Patient management platform for a digital health company. Appointment scheduling, telehealth integration, and secure records.',
-        },
-        nomad: {
-          title: 'Nomad Logistics',
-          description:
-            'Supply chain management tool with real-time shipment tracking, route optimization, and warehouse inventory management.',
-        },
+        gomezProducciones: { title: 'Gomez Producciones' },
+        talkeezi: { title: 'Talkeezi' },
+        beepsystem: { title: 'Beep System' },
+        radiante: { title: 'Radiante' },
+        sadonetech: { title: 'Sadone Tech' },
+        pedana: { title: 'Pedana' },
       },
     },
     about: {
@@ -228,21 +222,12 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Proyectos seleccionados',
       heading: 'Nuestro Trabajo',
       projects: {
-        meridian: {
-          title: 'Meridian Finance',
-          description:
-            'Dashboard financiero integral para una startup fintech. Visualización de datos en tiempo real, seguimiento de portafolios e informes automatizados.',
-        },
-        aura: {
-          title: 'Aura Health',
-          description:
-            'Plataforma de gestión de pacientes para una empresa de salud digital. Agendamiento, integración de telemedicina y registros seguros.',
-        },
-        nomad: {
-          title: 'Nomad Logistics',
-          description:
-            'Herramienta de gestión de cadena de suministro con seguimiento de envíos en tiempo real, optimización de rutas y gestión de inventario.',
-        },
+        gomezProducciones: { title: 'Gomez Producciones' },
+        talkeezi: { title: 'Talkeezi' },
+        beepsystem: { title: 'Beep System' },
+        radiante: { title: 'Radiante' },
+        sadonetech: { title: 'Sadone Tech' },
+        pedana: { title: 'Pedana' },
       },
     },
     about: {

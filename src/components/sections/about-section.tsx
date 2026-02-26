@@ -14,7 +14,7 @@ export function AboutSection() {
   const team = [
     {
       name: teamNames[0],
-      image: '/fotoSantiago.webp',
+      image: '/team/santiago.webp',
       ...t.about.team.santiago,
     },
     {
@@ -58,15 +58,15 @@ export function AboutSection() {
         >
           {team.map((member) => (
             <motion.div key={member.name} variants={fadeUp} className="text-center">
-              <div className="relative w-32 h-32 mx-auto mb-5">
+              <div className="relative w-44 h-44 mx-auto mb-5">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="rounded-full object-cover border border-border"
-                  sizes="96px"
+                  sizes="176px"
                 />
-              </div>{' '}
+              </div>
               <h3 className="text-lg font-inter font-bold text-foreground">{member.name}</h3>
               <p className="text-sm font-sans text-primary mb-2 min-h-10 flex items-center justify-center">
                 {member.role}

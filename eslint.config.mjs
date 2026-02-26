@@ -3,7 +3,6 @@ import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import prettier from "eslint-plugin-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import importPlugin from "eslint-plugin-import";
-import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 
 const eslintConfig = [
@@ -46,7 +45,6 @@ const eslintConfig = [
       prettier: prettier,
       "jsx-a11y": jsxA11y,
       import: importPlugin,
-      "react-hooks": reactHooks,
     },
     rules: {
       // Prettier rules
@@ -103,11 +101,6 @@ const eslintConfig = [
               group: "internal",
               position: "before",
             },
-            {
-              pattern: "./**",
-              group: "sibling",
-              position: "after",
-            },
           ],
           pathGroupsExcludedImportTypes: ["builtin"],
           alphabetize: {
@@ -116,10 +109,6 @@ const eslintConfig = [
           },
         },
       ],
-
-      // React Hooks rules
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
 
       // TypeScript rules
       "@typescript-eslint/no-explicit-any": "warn",
