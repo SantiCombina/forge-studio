@@ -29,12 +29,12 @@ export interface Translations {
     eyebrow: string;
     heading: string;
     projects: {
-      gomezProducciones: { title: string };
-      talkeezi: { title: string };
-      beepsystem: { title: string };
-      radiante: { title: string };
-      sadonetech: { title: string };
-      pedana: { title: string };
+      gomezProducciones: { title: string; description: string };
+      talkeezi: { title: string; description: string };
+      beepsystem: { title: string; description: string };
+      radiante: { title: string; description: string };
+      sadonetech: { title: string; description: string };
+      pedana: { title: string; description: string };
     };
   };
   about: {
@@ -120,12 +120,24 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Selected projects',
       heading: 'Our Work',
       projects: {
-        gomezProducciones: { title: 'Gomez Producciones' },
-        talkeezi: { title: 'Talkeezi' },
-        beepsystem: { title: 'Beep System' },
-        radiante: { title: 'Radiante' },
-        sadonetech: { title: 'Sadone Tech' },
-        pedana: { title: 'Pedana' },
+        gomezProducciones: {
+          title: 'Gomez Producciones',
+          description:
+            'Full web presence for an event production company. Custom site with service catalog, portfolio, and contact flow.',
+        },
+        talkeezi: {
+          title: 'Talkeezi',
+          description:
+            'Language learning platform connecting students with native tutors. Booking system, real-time chat, and session management.',
+        },
+        beepsystem: {
+          title: 'Beep System',
+          description:
+            'Attendance and access control system using NFC technology. Real-time monitoring dashboard and automated reporting.',
+        },
+        radiante: { title: 'Radiante', description: '—' },
+        sadonetech: { title: 'Sadone Tech', description: '—' },
+        pedana: { title: 'Pedana', description: '—' },
       },
     },
     about: {
@@ -222,12 +234,24 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Proyectos seleccionados',
       heading: 'Nuestro Trabajo',
       projects: {
-        gomezProducciones: { title: 'Gomez Producciones' },
-        talkeezi: { title: 'Talkeezi' },
-        beepsystem: { title: 'Beep System' },
-        radiante: { title: 'Radiante' },
-        sadonetech: { title: 'Sadone Tech' },
-        pedana: { title: 'Pedana' },
+        gomezProducciones: {
+          title: 'Gomez Producciones',
+          description:
+            'Presencia web completa para una empresa de producción de eventos. Sitio personalizado con catálogo de servicios, portfolio y flujo de contacto.',
+        },
+        talkeezi: {
+          title: 'Talkeezi',
+          description:
+            'Plataforma de aprendizaje de idiomas que conecta alumnos con tutores nativos. Sistema de reservas, chat en tiempo real y gestión de sesiones.',
+        },
+        beepsystem: {
+          title: 'Beep System',
+          description:
+            'Sistema de control de asistencia y acceso mediante tecnología NFC. Dashboard de monitoreo en tiempo real e informes automatizados.',
+        },
+        radiante: { title: 'Radiante', description: '—' },
+        sadonetech: { title: 'Sadone Tech', description: '—' },
+        pedana: { title: 'Pedana', description: '—' },
       },
     },
     about: {
