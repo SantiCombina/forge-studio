@@ -19,17 +19,17 @@ export function AboutSection() {
     },
     {
       name: teamNames[1],
-      image: '/fotoBruno.webp',
+      image: '/team/bruno.webp',
       ...t.about.team.bruno,
     },
     {
       name: teamNames[2],
-      image: '/fotoGino.webp',
+      image: '/team/gino.webp',
       ...t.about.team.gino,
     },
     {
       name: teamNames[3],
-      image: '/fotoMartin.webp',
+      image: '/team/martin.webp',
       ...t.about.team.martin,
     },
   ];

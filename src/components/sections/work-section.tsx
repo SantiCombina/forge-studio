@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 import { useLanguage } from '@/contexts/language-context';
-import { fadeUp } from '@/lib/animations';
+import { ease, fadeUp, stagger } from '@/lib/animations';
 
 const projectImages: Record<string, string> = {
   gomezProducciones: '/works/gomezprod.png',
@@ -22,6 +21,8 @@ export function WorkSection() {
   const { t } = useLanguage();
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
+  const isHovered = useRef(false);
+  const activeRef = useRef(0);
 
   const projects = [
     { key: 'gomezProducciones', ...t.work.projects.gomezProducciones },
@@ -33,12 +34,25 @@ export function WorkSection() {
   ];
 
   const goTo = (index: number) => {
-    setDirection(index > active ? 1 : -1);
+    setDirection(index > activeRef.current ? 1 : -1);
     setActive(index);
+    activeRef.current = index;
   };
 
-  const prev = () => goTo((active - 1 + projects.length) % projects.length);
-  const next = () => goTo((active + 1) % projects.length);
+  const prev = () => goTo((activeRef.current - 1 + projects.length) % projects.length);
+  const next = () => goTo((activeRef.current + 1) % projects.length);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered.current) {
+        const next = (activeRef.current + 1) % projects.length;
+        setDirection(1);
+        setActive(next);
+        activeRef.current = next;
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [projects.length]);
 
   return (
     <section id="work" className="relative py-24 md:py-32">
@@ -59,10 +73,26 @@ export function WorkSection() {
         {/* ── Desktop: numbered list + live preview ── */}
         <div className="hidden md:grid grid-cols-[5fr_5fr] gap-16 items-start">
           {/* Left: project list */}
-          <div className="flex flex-col">
+          <motion.div
+            className="flex flex-col"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            variants={stagger}
+            onMouseEnter={() => {
+              isHovered.current = true;
+            }}
+            onMouseLeave={() => {
+              isHovered.current = false;
+            }}
+          >
             {projects.map((project, i) => (
-              <button
+              <motion.button
                 key={project.key}
+                variants={{
+                  hidden: { opacity: 0, x: -24 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
+                }}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className="group flex items-center gap-6 py-5 border-b border-border/30 text-left"
@@ -75,10 +105,10 @@ export function WorkSection() {
                 </span>
 
                 <span
-                  className="text-base font-inter font-medium transition-all duration-300"
+                  className="text-base font-inter font-medium transition-all duration-300 origin-left"
                   style={{
                     color: active === i ? 'hsl(var(--foreground))' : 'hsl(var(--muted-foreground))',
-                    transform: active === i ? 'translateX(4px)' : 'translateX(0)',
+                    transform: active === i ? 'translateX(4px) scale(1.1)' : 'translateX(0) scale(1)',
                   }}
                 >
                   {project.title}
@@ -87,12 +117,18 @@ export function WorkSection() {
                 {active === i && (
                   <motion.span layoutId="dot" className="ml-auto block w-1.5 h-1.5 rounded-full bg-primary" />
                 )}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Right: image + description */}
-          <div className="flex flex-col gap-5">
+          <motion.div
+            className="flex flex-col gap-5"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, ease }}
+          >
             <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary/20">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -129,7 +165,7 @@ export function WorkSection() {
                 </motion.p>
               </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* ── Mobile: swipeable carousel ── */}
@@ -210,8 +246,7 @@ export function WorkSection() {
                 className="h-px transition-all duration-400 rounded-full"
                 style={{
                   width: i === active ? '24px' : '12px',
-                  backgroundColor:
-                    i === active ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground) / 0.3)',
+                  backgroundColor: i === active ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground) / 0.3)',
                 }}
               />
             ))}
