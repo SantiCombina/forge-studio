@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
+import { MobileMenu } from '@/components/ui/navbar/mobile-menu';
 import { useLanguage } from '@/contexts/language-context';
 import { ease } from '@/lib/animations';
 import { scrollToSection } from '@/lib/scroll';
@@ -14,7 +14,6 @@ import { scrollToSection } from '@/lib/scroll';
 export function Navbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
     { label: t.navbar.services, id: 'services' },
@@ -29,70 +28,46 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId);
-    setMobileOpen(false);
-  };
-
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-6">
-        <Link
-          href="/"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-serif text-xl md:text-2xl font-bold text-foreground tracking-tight hover:bg-transparent p-0 h-auto"
-        >
-          Forge<span className="text-primary">.</span>
-        </Link>
+    <>
+      {/* Desktop navbar — hidden on mobile */}
+      <motion.nav
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease }}
+        className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
+          scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : 'bg-transparent'
+        }`}
+      >
+        <div className="container mx-auto flex items-center justify-between h-20 px-6">
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="font-serif text-2xl font-bold text-foreground tracking-tight hover:bg-transparent p-0 h-auto"
+          >
+            Forge<span className="text-primary">.</span>
+          </Link>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Button
-              key={link.id}
-              variant="ghost"
-              onClick={() => handleNavClick(link.id)}
-              className="text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-transparent p-0 h-auto"
-            >
-              {link.label}
-            </Button>
-          ))}
-          <LanguageSwitcher />
-        </div>
-
-        <Button
-          variant="ghost"
-          className="md:hidden text-foreground hover:bg-transparent p-0 h-auto"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </Button>
-      </div>
-
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 pt-2">
-          {navLinks.map((link) => (
-            <Button
-              key={link.id}
-              variant="ghost"
-              onClick={() => handleNavClick(link.id)}
-              className="block w-full justify-start py-3 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-transparent"
-            >
-              {link.label}
-            </Button>
-          ))}
-          <div className="mt-4 pl-1">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Button
+                key={link.id}
+                variant="ghost"
+                onClick={() => scrollToSection(link.id)}
+                className="text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-transparent p-0 h-auto"
+              >
+                {link.label}
+              </Button>
+            ))}
             <LanguageSwitcher />
           </div>
         </div>
-      )}
-    </motion.nav>
+      </motion.nav>
+
+      {/* Mobile nav — StaggeredMenu, hidden on desktop */}
+      <div className="md:hidden">
+        <MobileMenu />
+      </div>
+    </>
   );
 }

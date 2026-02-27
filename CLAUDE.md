@@ -48,6 +48,11 @@ src/
 
 - `RESEND_API_KEY` — required for contact form email delivery (`.env.local`)
 
+### Naming Conventions
+
+- **Files:** Always use **kebab-case** — e.g., `staggered-menu.tsx`, `language-switcher.tsx`. Never PascalCase filenames.
+- **Component location:** Reusable UI components go in `src/components/ui/`. Page sections go in `src/components/sections/`. No components directly in `src/components/`.
+
 ### Code Style
 
 ESLint flat config (`eslint.config.mjs`) enforces Prettier formatting: `printWidth: 120`, trailing commas, semicolons required. Run `npm run lint:fix` before committing.

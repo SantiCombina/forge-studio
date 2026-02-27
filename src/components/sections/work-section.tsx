@@ -50,7 +50,7 @@ export function WorkSection() {
         setActive(next);
         activeRef.current = next;
       }
-    }, 7000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [projects.length]);
 
