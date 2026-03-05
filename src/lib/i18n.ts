@@ -18,6 +18,7 @@ export interface Translations {
   services: {
     eyebrow: string;
     heading: string;
+    subheading: string;
     items: {
       customDevelopment: { title: string; description: string };
       automationIntegrations: { title: string; description: string };
@@ -93,26 +94,27 @@ export const translations: Record<Language, Translations> = {
     services: {
       eyebrow: 'What we do',
       heading: 'Services',
+      subheading: 'From web platforms and internal tools to automations and integrations — we cover everything your business needs to move forward.',
       items: {
         customDevelopment: {
           title: 'Custom Development',
           description:
-            'Tailored digital solutions built around your business model. From internal systems to scalable SaaS platforms.',
+            'We design and build software that fits your exact workflows — internal tools, dashboards, SaaS platforms, and anything in between.',
         },
         automationIntegrations: {
           title: 'Automation & Integrations',
           description:
-            'Process automation and seamless system integrations that reduce manual work and improve operational efficiency.',
+            'We connect your tools and automate repetitive tasks so your team can focus on what actually matters.',
         },
         strategicWeb: {
           title: 'Strategic Web Development',
           description:
-            'High-performance websites and web platforms designed with business goals, conversion, and scalability in mind.',
+            'Marketing sites and web platforms built to convert — fast, polished, and aligned with your business goals.',
         },
         standardSolutions: {
           title: 'Standardized Digital Solutions',
           description:
-            'Pre-built, structured digital systems ready to be implemented and adapted to your operational needs.',
+            'Proven, structured solutions for common business needs — faster to deploy, easier to maintain, built to last.',
         },
       },
     },
@@ -219,26 +221,27 @@ export const translations: Record<Language, Translations> = {
     services: {
       eyebrow: 'Lo que hacemos',
       heading: 'Servicios',
+      subheading: 'Desde plataformas web y herramientas internas hasta automatizaciones e integraciones — cubrimos todo lo que tu negocio necesita para avanzar.',
       items: {
         customDevelopment: {
-          title: 'Desarrollo a Medida',
+          title: 'Desarrollo a medida',
           description:
-            'Soluciones digitales diseñadas en función de tu modelo de negocio. Desde sistemas internos hasta plataformas SaaS escalables.',
+            'Diseñamos y construimos software que se adapta a tus procesos exactos — herramientas internas, dashboards, plataformas SaaS y todo lo que haga falta.',
         },
         automationIntegrations: {
-          title: 'Automatización e Integraciones',
+          title: 'Automatización e integraciones',
           description:
-            'Automatización de procesos e integración de sistemas para reducir tareas manuales y optimizar la eficiencia operativa.',
+            'Conectamos tus herramientas y automatizamos tareas repetitivas para que tu equipo se enfoque en lo que realmente importa.',
         },
         strategicWeb: {
-          title: 'Desarrollo Web Estratégico',
+          title: 'Desarrollo web estratégico',
           description:
-            'Sitios y plataformas web de alto rendimiento diseñados con foco en objetivos de negocio, conversión y escalabilidad.',
+            'Sitios y plataformas web diseñados para convertir — rápidos, bien terminados y alineados con tus objetivos de negocio.',
         },
         standardSolutions: {
-          title: 'Soluciones Digitales Estandarizadas',
+          title: 'Soluciones digitales estandarizadas',
           description:
-            'Sistemas digitales estructurados y listos para implementar, adaptables a las necesidades operativas de tu empresa.',
+            'Soluciones probadas para necesidades habituales de negocio — más rápidas de implementar, más fáciles de mantener, construidas para durar.',
         },
       },
     },
