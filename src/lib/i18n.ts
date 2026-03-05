@@ -86,7 +86,7 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Software Development Studio',
       heading: 'We build software that moves your business',
       headingItalic: 'forward',
-      body: 'A boutique studio of two developers who partner with businesses to design, build, and ship custom software products — from web apps to APIs and everything in between.',
+      body: 'A boutique software studio that partners with businesses to design, build, and ship high-quality digital products — from complex web platforms and internal tools to the systems and integrations that power them.',
       ctaPrimary: 'See our work',
       ctaSecondary: 'Get in touch',
     },
@@ -123,21 +123,33 @@ export const translations: Record<Language, Translations> = {
         gomezProducciones: {
           title: 'Gomez Producciones',
           description:
-            'Full web presence for an event production company. Custom site with service catalog, portfolio, and contact flow.',
+            'News portal for a local audiovisual production company. Admins publish articles; visitors browse regional news.',
         },
         talkeezi: {
           title: 'Talkeezi',
           description:
-            'Language learning platform connecting students with native tutors. Booking system, real-time chat, and session management.',
+            'Voice and video chat platform for language learning. Connect with speakers of the language you want to practice and have real conversations.',
         },
         beepsystem: {
-          title: 'Beep System',
+          title: 'Beep Informática',
           description:
-            'Attendance and access control system using NFC technology. Real-time monitoring dashboard and automated reporting.',
+            'Quoting system for a print shop. Configurable pricing, real-time cost calculation by print options, PDF export and ticket printing.',
         },
-        radiante: { title: 'Radiante', description: '—' },
-        sadonetech: { title: 'Sadone Tech', description: '—' },
-        pedana: { title: 'Pedana', description: '—' },
+        radiante: {
+          title: 'Radiante Pizzeria',
+          description:
+            'Website for a pizzeria and vermouth bar in Recoleta, Buenos Aires. Showcases the food and drinks menu and centralizes reservations.',
+        },
+        sadonetech: {
+          title: 'Sadone Tech',
+          description:
+            "Landing page for a furniture marketing agency. Presents the owner's brand and services, with a contact form for potential clients.",
+        },
+        pedana: {
+          title: 'Morteros Shooting Club',
+          description:
+            "Tournament registration system for a shooting club. Form entries sync automatically to Google Sheets, streamlining the organizers' workflow.",
+        },
       },
     },
     about: {
@@ -200,7 +212,7 @@ export const translations: Record<Language, Translations> = {
       eyebrow: 'Estudio de Desarrollo de Software',
       heading: 'Construimos software que impulsa tu negocio',
       headingItalic: 'hacia adelante',
-      body: 'Un estudio boutique de dos desarrolladores que se asocian con empresas para diseñar, construir y lanzar productos de software a medida — desde aplicaciones web hasta APIs y todo lo que hay entre medio.',
+      body: 'Un estudio de software boutique que se asocia con empresas para diseñar, construir y lanzar productos digitales de alta calidad — desde plataformas web complejas y herramientas internas hasta los sistemas e integraciones que los hacen funcionar.',
       ctaPrimary: 'Ver nuestro trabajo',
       ctaSecondary: 'Contáctanos',
     },
@@ -237,21 +249,33 @@ export const translations: Record<Language, Translations> = {
         gomezProducciones: {
           title: 'Gomez Producciones',
           description:
-            'Presencia web completa para una empresa de producción de eventos. Sitio personalizado con catálogo de servicios, portfolio y flujo de contacto.',
+            'Portal de noticias para una productora audiovisual local. Los administradores publican artículos y los usuarios consultan las noticias de la zona.',
         },
         talkeezi: {
           title: 'Talkeezi',
           description:
-            'Plataforma de aprendizaje de idiomas que conecta alumnos con tutores nativos. Sistema de reservas, chat en tiempo real y gestión de sesiones.',
+            'Plataforma de voz y videochat para aprender idiomas. Conectá con hablantes del idioma que querés practicar y conversá en tiempo real.',
         },
         beepsystem: {
-          title: 'Beep System',
+          title: 'Beep Informática',
           description:
-            'Sistema de control de asistencia y acceso mediante tecnología NFC. Dashboard de monitoreo en tiempo real e informes automatizados.',
+            'Sistema de cotización para un comercio de impresión. Precios configurables, cálculo en tiempo real según las opciones, exportación a PDF e impresión de tickets.',
         },
-        radiante: { title: 'Radiante', description: '—' },
-        sadonetech: { title: 'Sadone Tech', description: '—' },
-        pedana: { title: 'Pedana', description: '—' },
+        radiante: {
+          title: 'Pizzería Radiante',
+          description:
+            'Sitio web para una pizzería y vermutería en Recoleta, Buenos Aires. Exhibe la carta de comida y tragos y centraliza las reservas.',
+        },
+        sadonetech: {
+          title: 'Sadone Tech',
+          description:
+            'Landing page para una agencia de marketing especializada en mueblerías. Presenta la marca y servicios del propietario, con formulario de contacto.',
+        },
+        pedana: {
+          title: 'Pedana Morteros',
+          description:
+            'Sistema de inscripción a torneos para una pedana de tiro. Los formularios se sincronizan automáticamente con Google Sheets, agilizando la gestión.',
+        },
       },
     },
     about: {

@@ -71,7 +71,7 @@ export function WorkSection() {
         </motion.div>
 
         {/* ── Desktop: numbered list + live preview ── */}
-        <div className="hidden md:grid grid-cols-[5fr_5fr] gap-16 items-start">
+        <div className="hidden md:grid grid-cols-[2fr_3fr] gap-16 items-start max-w-5xl mx-auto">
           {/* Left: project list */}
           <motion.div
             className="flex flex-col"
@@ -115,7 +115,7 @@ export function WorkSection() {
                 </span>
 
                 {active === i && (
-                  <motion.span layoutId="dot" className="ml-auto block w-1.5 h-1.5 rounded-full bg-primary" />
+                  <motion.span layoutId="dot" className="ml-3 shrink-0 block w-1.5 h-1.5 rounded-full bg-primary" />
                 )}
               </motion.button>
             ))}

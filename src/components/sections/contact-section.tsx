@@ -100,12 +100,12 @@ export function ContactSection() {
             )}
           </div>
 
-          <div className="text-center pt-2">
+          <div className="pt-2">
             <Button
               type="submit"
               size="lg"
               disabled={isPending}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans px-10 py-6 text-sm tracking-wide"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans py-6 text-sm tracking-wide"
             >
               {isPending ? t.contact.submitting : t.contact.submitButton}
             </Button>
