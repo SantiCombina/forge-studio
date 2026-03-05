@@ -1,6 +1,7 @@
 'use client';
 
 import { Globe } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { StaggeredMenu } from '@/components/ui/staggered-menu';
@@ -33,6 +34,13 @@ const PanelFooter = (
 
 export function MobileMenu() {
   const { t } = useLanguage();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const navItems = [
     { label: t.navbar.services, ariaLabel: t.navbar.services, link: '#services' },
@@ -57,6 +65,7 @@ export function MobileMenu() {
       closeOnClickAway={true}
       closeOnItemClick={true}
       panelFooterContent={PanelFooter}
+      scrolled={scrolled}
       onItemClick={(item) => scrollToSection(item.link.replace('#', ''))}
     />
   );

@@ -94,7 +94,8 @@ export const translations: Record<Language, Translations> = {
     services: {
       eyebrow: 'What we do',
       heading: 'Services',
-      subheading: 'From web platforms and internal tools to automations and integrations — we cover everything your business needs to move forward.',
+      subheading:
+        'From web platforms and internal tools to automations and integrations — we cover everything your business needs to move forward.',
       items: {
         customDevelopment: {
           title: 'Custom Development',
@@ -221,7 +222,8 @@ export const translations: Record<Language, Translations> = {
     services: {
       eyebrow: 'Lo que hacemos',
       heading: 'Servicios',
-      subheading: 'Desde plataformas web y herramientas internas hasta automatizaciones e integraciones — cubrimos todo lo que tu negocio necesita para avanzar.',
+      subheading:
+        'Desde plataformas web y herramientas internas hasta automatizaciones e integraciones — cubrimos todo lo que tu negocio necesita para avanzar.',
       items: {
         customDevelopment: {
           title: 'Desarrollo a medida',

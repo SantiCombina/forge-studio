@@ -50,7 +50,7 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
@@ -58,20 +58,18 @@ export function AboutSection() {
         >
           {team.map((member) => (
             <motion.div key={member.name} variants={fadeUp} className="text-center">
-              <div className="relative w-44 h-44 mx-auto mb-5">
+              <div className="relative w-28 h-28 md:w-44 md:h-44 mx-auto mb-4 md:mb-5">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="rounded-full object-cover border border-border"
-                  sizes="176px"
+                  sizes="(max-width: 768px) 112px, 176px"
                 />
               </div>
-              <h3 className="text-lg font-inter font-bold text-foreground">{member.name}</h3>
-              <p className="text-sm font-sans text-primary mb-2 min-h-10 flex items-center justify-center">
-                {member.role}
-              </p>
-              <p className="text-sm font-sans text-muted-foreground leading-relaxed min-h-18">{member.bio}</p>
+              <h3 className="text-sm md:text-lg font-inter font-bold text-foreground leading-snug">{member.name}</h3>
+              <p className="text-xs md:text-sm font-sans text-primary mb-2 mt-1">{member.role}</p>
+              <p className="text-xs md:text-sm font-sans text-muted-foreground leading-relaxed">{member.bio}</p>
             </motion.div>
           ))}
         </motion.div>

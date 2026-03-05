@@ -22,7 +22,6 @@ export function ServicesSection() {
 
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-[5fr_7fr] gap-12 lg:gap-24 max-w-6xl mx-auto items-start">
-
           {/* Left: sticky heading + statement */}
           <motion.div
             className="md:sticky md:top-32"
@@ -34,12 +33,8 @@ export function ServicesSection() {
             <p className="text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground mb-4">
               {t.services.eyebrow}
             </p>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-6">
-              {t.services.heading}
-            </h2>
-            <p className="text-sm font-sans text-muted-foreground leading-relaxed">
-              {t.services.subheading}
-            </p>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-6">{t.services.heading}</h2>
+            <p className="text-sm font-sans text-muted-foreground leading-relaxed">{t.services.subheading}</p>
           </motion.div>
 
           {/* Right: numbered service list */}
@@ -49,7 +44,7 @@ export function ServicesSection() {
             viewport={{ once: true, margin: '-40px' }}
             variants={stagger}
           >
-            {services.map((service, i) => (
+            {services.map((service) => (
               <motion.div
                 key={service.key}
                 variants={{
@@ -64,16 +59,13 @@ export function ServicesSection() {
                     <h3 className="text-base font-inter font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
                       {service.title}
                     </h3>
-                    <p className="text-sm font-sans text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+                    <p className="text-sm font-sans text-muted-foreground leading-relaxed">{service.description}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
             <div className="border-t border-border/40" />
           </motion.div>
-
         </div>
       </div>
     </section>

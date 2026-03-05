@@ -14,6 +14,7 @@ import { scrollToSection } from '@/lib/scroll';
 export function Navbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const navLinks = [
     { label: t.navbar.services, id: 'services' },
@@ -26,6 +27,14 @@ export function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => setShowMobileMenu(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
   }, []);
 
   return (
@@ -64,10 +73,8 @@ export function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile nav — StaggeredMenu, hidden on desktop */}
-      <div className="md:hidden">
-        <MobileMenu />
-      </div>
+      {/* Mobile nav — mounted only on mobile viewports via JS media query */}
+      {showMobileMenu && <MobileMenu />}
     </>
   );
 }
