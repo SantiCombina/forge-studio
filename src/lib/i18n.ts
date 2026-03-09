@@ -34,7 +34,7 @@ export interface Translations {
       talkeezi: { title: string; description: string };
       beepsystem: { title: string; description: string };
       radiante: { title: string; description: string };
-      sadonetech: { title: string; description: string };
+      stockFlow: { title: string; description: string };
       pedana: { title: string; description: string };
     };
   };
@@ -141,12 +141,12 @@ export const translations: Record<Language, Translations> = {
         radiante: {
           title: 'Radiante Pizzeria',
           description:
-            'Website for a pizzeria and vermouth bar in Recoleta, Buenos Aires. Showcases the food and drinks menu and centralizes reservations.',
+            'Internal staff time-tracking system and website for a restaurant. Displays the menu and centralizes reservations.',
         },
-        sadonetech: {
-          title: 'Sadone Tech',
+        stockFlow: {
+          title: 'Flowy',
           description:
-            "Landing page for a furniture marketing agency. Presents the owner's brand and services, with a contact form for potential clients.",
+            'A system to manage your business end to end — track stock, sales, your sales team, and every transaction from one place.',
         },
         pedana: {
           title: 'Morteros Shooting Club',
@@ -269,12 +269,12 @@ export const translations: Record<Language, Translations> = {
         radiante: {
           title: 'Pizzería Radiante',
           description:
-            'Sitio web para una pizzería y vermutería en Recoleta, Buenos Aires. Exhibe la carta de comida y tragos y centraliza las reservas.',
+            'Sistema interno de fichajes para el personal y sitio web para una restaurante. Exhibe la carta y centraliza las reservas.',
         },
-        sadonetech: {
-          title: 'Sadone Tech',
+        stockFlow: {
+          title: 'Flowy',
           description:
-            'Landing page para una agencia de marketing especializada en mueblerías. Presenta la marca y servicios del propietario, con formulario de contacto.',
+            'Sistema para gestionar tu negocio de manera integral, controlá el stock, ventas, vendedores y cada movimiento desde un solo lugar.',
         },
         pedana: {
           title: 'Pedana Morteros',

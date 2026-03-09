@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(pnpm build:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(xargs grep -l \"whileInView\\\\|variants\")",
+      "Bash(pnpm run lint)"
     ]
   }
 }

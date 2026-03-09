@@ -9,12 +9,12 @@ import { useLanguage } from '@/contexts/language-context';
 import { ease, fadeUp, stagger } from '@/lib/animations';
 
 const projectImages: Record<string, string> = {
-  gomezProducciones: '/works/gomezprod.png',
-  talkeezi: '/works/talkeezi.png',
+  stockFlow: '/works/stock-flow.png',
   beepsystem: '/works/beepsystem.png',
   radiante: '/works/radiante.png',
-  sadonetech: '/works/sadonetech.png',
+  gomezProducciones: '/works/gomezprod.png',
   pedana: '/works/pedana.png',
+  talkeezi: '/works/talkeezi.png',
 };
 
 export function WorkSection() {
@@ -25,12 +25,12 @@ export function WorkSection() {
   const activeRef = useRef(0);
 
   const projects = [
-    { key: 'gomezProducciones', ...t.work.projects.gomezProducciones },
-    { key: 'talkeezi', ...t.work.projects.talkeezi },
+    { key: 'stockFlow', ...t.work.projects.stockFlow },
     { key: 'beepsystem', ...t.work.projects.beepsystem },
     { key: 'radiante', ...t.work.projects.radiante },
-    { key: 'sadonetech', ...t.work.projects.sadonetech },
+    { key: 'gomezProducciones', ...t.work.projects.gomezProducciones },
     { key: 'pedana', ...t.work.projects.pedana },
+    { key: 'talkeezi', ...t.work.projects.talkeezi },
   ];
 
   const goTo = (index: number) => {
