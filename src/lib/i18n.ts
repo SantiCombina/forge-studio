@@ -52,17 +52,10 @@ export interface Translations {
   contact: {
     heading: string;
     subheading: string;
-    namePlaceholder: string;
-    emailPlaceholder: string;
-    messagePlaceholder: string;
-    submitButton: string;
-    submitting: string;
-    successMessage: string;
-    errorMessage: string;
-    validation: {
-      nameMin: string;
-      emailInvalid: string;
-      messageMin: string;
+    channels: {
+      instagram: { label: string; description: string };
+      linkedin: { label: string; description: string };
+      email: { label: string; description: string };
     };
   };
   footer: {
@@ -180,19 +173,12 @@ export const translations: Record<Language, Translations> = {
         'We believe high-quality software is born from the combination of strategic vision and technical excellence. We work as an extension of your team, building solid digital solutions designed to grow.',
     },
     contact: {
-      heading: 'Have a project in mind?',
-      subheading: "Let's talk about how we can bring your idea to life.",
-      namePlaceholder: 'Name',
-      emailPlaceholder: 'Email',
-      messagePlaceholder: 'Tell us about your project...',
-      submitButton: 'Send message',
-      submitting: 'Sending…',
-      successMessage: "Message sent! We'll be in touch soon.",
-      errorMessage: 'Something went wrong. Please try again.',
-      validation: {
-        nameMin: 'Name must be at least 2 characters.',
-        emailInvalid: 'Please enter a valid email address.',
-        messageMin: 'Message must be at least 10 characters.',
+      heading: "Let's talk",
+      subheading: 'Reach us directly through any of our channels.',
+      channels: {
+        instagram: { label: 'Instagram', description: 'Follow our work' },
+        linkedin: { label: 'LinkedIn', description: 'Connect with us' },
+        email: { label: 'Email', description: 'Send us a message' },
       },
     },
     footer: {
@@ -308,19 +294,12 @@ export const translations: Record<Language, Translations> = {
         'Creemos que el software de calidad nace de la combinación entre visión estratégica y excelencia técnica. Trabajamos como una extensión de tu equipo, construyendo soluciones digitales sólidas y pensadas para crecer.',
     },
     contact: {
-      heading: '¿Tienes un proyecto en mente?',
-      subheading: 'Hablemos sobre cómo podemos dar vida a tu idea.',
-      namePlaceholder: 'Nombre',
-      emailPlaceholder: 'Correo electrónico',
-      messagePlaceholder: 'Cuéntanos sobre tu proyecto...',
-      submitButton: 'Enviar mensaje',
-      submitting: 'Enviando…',
-      successMessage: '¡Mensaje enviado! Te contactaremos pronto.',
-      errorMessage: 'Algo salió mal. Por favor, intentá de nuevo.',
-      validation: {
-        nameMin: 'El nombre debe tener al menos 2 caracteres.',
-        emailInvalid: 'Por favor ingresá un email válido.',
-        messageMin: 'El mensaje debe tener al menos 10 caracteres.',
+      heading: 'Hablemos',
+      subheading: 'Contactanos directamente por cualquiera de nuestros canales.',
+      channels: {
+        instagram: { label: 'Instagram', description: 'Seguí nuestro trabajo' },
+        linkedin: { label: 'LinkedIn', description: 'Conectá con nosotros' },
+        email: { label: 'Email', description: 'Mandanos un mensaje' },
       },
     },
     footer: {
