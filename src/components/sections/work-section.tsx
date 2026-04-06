@@ -23,6 +23,7 @@ export function WorkSection() {
   const [direction, setDirection] = useState(1);
   const isHovered = useRef(false);
   const activeRef = useRef(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const projects = [
     { key: 'stockFlow', ...t.work.projects.stockFlow },
@@ -33,25 +34,33 @@ export function WorkSection() {
     { key: 'talkeezi', ...t.work.projects.talkeezi },
   ];
 
+  const startTimer = (length: number) => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      if (!isHovered.current) {
+        const n = (activeRef.current + 1) % length;
+        setDirection(1);
+        setActive(n);
+        activeRef.current = n;
+      }
+    }, 7000);
+  };
+
   const goTo = (index: number) => {
     setDirection(index > activeRef.current ? 1 : -1);
     setActive(index);
     activeRef.current = index;
+    startTimer(projects.length);
   };
 
   const prev = () => goTo((activeRef.current - 1 + projects.length) % projects.length);
   const next = () => goTo((activeRef.current + 1) % projects.length);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovered.current) {
-        const next = (activeRef.current + 1) % projects.length;
-        setDirection(1);
-        setActive(next);
-        activeRef.current = next;
-      }
-    }, 5000);
-    return () => clearInterval(interval);
+    startTimer(projects.length);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [projects.length]);
 
   return (
@@ -93,8 +102,8 @@ export function WorkSection() {
                   hidden: { opacity: 0, x: -24 },
                   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
                 }}
-                onMouseEnter={() => setActive(i)}
-                onClick={() => setActive(i)}
+                onMouseEnter={() => goTo(i)}
+                onClick={() => goTo(i)}
                 className="group flex items-center gap-6 py-5 border-b border-border/30 text-left"
               >
                 <span

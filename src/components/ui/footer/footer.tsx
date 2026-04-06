@@ -42,7 +42,7 @@ export function Footer() {
               <LucideInstagram size={16} />
             </a>
             <a
-              href="https://www.linkedin.com/in/forge-studio/"
+              href="https://www.linkedin.com/company/forgestudio-tech"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

@@ -16,7 +16,7 @@ const CHANNELS = [
   {
     key: 'linkedin' as const,
     icon: Linkedin,
-    href: 'https://www.linkedin.com/in/forge-studio/',
+    href: 'https://www.linkedin.com/company/forgestudio-tech',
     handle: 'Forge Studio',
   },
   {
@@ -34,7 +34,7 @@ export function ContactSection() {
     <section id="contact" className="relative py-24 md:py-32">
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div className="container mx-auto px-6 max-w-2xl">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -47,7 +47,10 @@ export function ContactSection() {
             <p className="text-sm md:text-base font-sans text-muted-foreground">{t.contact.subheading}</p>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col w-full divide-y divide-border rounded-xl border border-border overflow-hidden"
+          >
             {CHANNELS.map(({ key, icon: Icon, href, handle }) => {
               const channel = t.contact.channels[key];
               return (
@@ -56,28 +59,29 @@ export function ContactSection() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col gap-5 rounded-xl border border-border bg-secondary p-7 transition-colors duration-300 hover:border-primary/60"
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  className="group flex items-center justify-between gap-4 bg-secondary px-6 py-5 transition-colors duration-200 hover:bg-secondary/70"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-primary/10 text-primary">
-                      <Icon size={20} strokeWidth={1.5} />
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="flex items-center justify-center w-9 h-9 shrink-0 rounded-lg bg-primary/10 text-primary">
+                      <Icon size={17} strokeWidth={1.5} />
                     </div>
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <span className="font-serif text-base font-semibold text-foreground leading-tight">
+                        {channel.label}
+                      </span>
+                      <span className="text-xs font-sans text-muted-foreground">{channel.description}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-sm font-mono text-foreground/70 group-hover:text-primary transition-colors duration-200 hidden sm:block">
+                      {handle}
+                    </span>
                     <ArrowUpRight
-                      size={16}
-                      className="text-muted-foreground/40 transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      size={15}
+                      className="text-muted-foreground/30 transition-all duration-200 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </div>
-
-                  <div className="flex flex-col gap-1">
-                    <span className="font-serif text-lg font-semibold text-foreground">{channel.label}</span>
-                    <span className="text-xs font-sans text-muted-foreground">{channel.description}</span>
-                  </div>
-
-                  <span className="text-xs font-mono text-muted-foreground/60 border-t border-border pt-4 mt-auto">
-                    {handle}
-                  </span>
                 </motion.a>
               );
             })}
