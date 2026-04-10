@@ -153,11 +153,11 @@ export const translations: Record<Language, Translations> = {
       heading: 'The Team',
       team: {
         santiago: {
-          role: 'Co-Founder · Architecture & Development',
+          role: 'Architecture & Development',
           bio: 'Software Engineering student focused on scalable product design and solid system architecture.',
         },
         bruno: {
-          role: 'Co-Founder · Strategy & Development',
+          role: 'Strategy & Development',
           bio: 'University Programming Technician. Combines strategic vision with technical execution and product-driven thinking.',
         },
         gino: {
@@ -274,11 +274,11 @@ export const translations: Record<Language, Translations> = {
       heading: 'El Equipo',
       team: {
         santiago: {
-          role: 'Co-Fundador · Arquitectura y Desarrollo',
+          role: 'Arquitectura y Desarrollo',
           bio: 'Estudiante de Ingeniería en Sistemas, enfocado en el diseño de productos escalables y arquitectura sólida.',
         },
         bruno: {
-          role: 'Co-Fundador · Estrategia y Desarrollo',
+          role: 'Estrategia y Desarrollo',
           bio: 'Técnico Universitario en Programación. Combina visión estratégica con ejecución técnica.',
         },
         gino: {
