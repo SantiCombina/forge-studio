@@ -1,10 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 import { useLanguage } from '@/contexts/language-context';
 import { ease, fadeUp, stagger } from '@/lib/animations';
+
+const teamLinkedIn: Record<string, string> = {
+  'Santiago Combina': 'https://www.linkedin.com/in/santiago-combina/',
+  'Bruno Cé': 'https://www.linkedin.com/in/bruno-ce/',
+  'Gino Novello': 'https://www.linkedin.com/in/ginonovello/',
+  'Martin Giaveno': 'https://www.linkedin.com/in/martin-giaveno-88ba36310/',
+};
 
 const teamNames = ['Santiago Combina', 'Bruno Cé', 'Gino Novello', 'Martin Giaveno'];
 
@@ -58,16 +66,28 @@ export function AboutSection() {
         >
           {team.map((member) => (
             <motion.div key={member.name} variants={fadeUp} className="text-center">
-              <div className="relative w-28 h-28 md:w-44 md:h-44 mx-auto mb-4 md:mb-5">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="rounded-full object-cover border border-border"
-                  sizes="(max-width: 768px) 112px, 176px"
-                />
-              </div>
-              <h3 className="text-sm md:text-lg font-inter font-bold text-foreground leading-snug">{member.name}</h3>
+              <a
+                href={teamLinkedIn[member.name]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-block"
+                aria-label={`LinkedIn de ${member.name}`}
+              >
+                <div className="relative w-28 h-28 md:w-44 md:h-44 mx-auto mb-4 md:mb-5">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="rounded-full object-cover transition-all duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 112px, 176px"
+                  />
+                  <div className="absolute inset-0 rounded-full ring-1 ring-border transition-all duration-500 group-hover:ring-2 group-hover:ring-primary/60" />
+                </div>
+                <h3 className="inline-flex items-center gap-1 text-sm md:text-lg font-inter font-bold text-foreground leading-snug">
+                  {member.name}
+                  <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary opacity-0 -translate-y-0.5 transition-all duration-300 group-hover:opacity-100" />
+                </h3>
+              </a>
               <p className="text-xs md:text-sm font-sans text-primary mb-2 mt-1">{member.role}</p>
               <p className="text-xs md:text-sm font-sans text-muted-foreground leading-relaxed">{member.bio}</p>
             </motion.div>
